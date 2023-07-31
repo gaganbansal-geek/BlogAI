@@ -6,7 +6,7 @@ const { toPng } = require('html-to-image');
 
 
 // Replace 'YOUR_API_KEY' with your actual API key obtained from Midjourney
-const API_KEY = "68fcef4f-239b-4795-bb03-f0218a75dfad";
+const API_KEY = "YOUR_API_KEY";
 // const API_KEY = "d83e6ed3-89e5-421b-9f31-9dfaf3e24934";
 
 const generateAndSaveImage = async (heading) => {
