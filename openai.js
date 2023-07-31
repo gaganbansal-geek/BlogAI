@@ -19,7 +19,7 @@ const openai = new OpenAIApi(config);
 
 async function generateContent(heading,link) {
     try {
-        const prompt = `Analysis the content available at this link "${link}" and on the basis of that Write content about "${heading}"`;
+        const prompt = `Analysis the content available at this link "${link}" and on the basis of that Write content about "${heading} in between 1000 - 2000 words content should be simple and optimistic tone should be professional"`;
         const response = await openai.createCompletion({
             engine: 'text-davinci-003', // You can use a different engine based on your preference and subscription level
             prompt: prompt,
