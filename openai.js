@@ -17,9 +17,9 @@ const config = new Configuration({
 const openai = new OpenAIApi(config);
 
 
-async function generateContent(heading) {
+async function generateContent(heading,link) {
     try {
-        const prompt = `Write content about "${heading}"`;
+        const prompt = `Analysis the content available at this link "${link}" and on the basis of that Write content about "${heading}"`;
         const response = await openai.createCompletion({
             engine: 'text-davinci-003', // You can use a different engine based on your preference and subscription level
             prompt: prompt,
@@ -53,7 +53,7 @@ async function scrapeBlog() {
     for (const article of articles) {
         const heading = article.title;
         const link = article.link;
-        const content = await generateContent(heading);
+        const content = await generateContent(heading,link);
         articlesWithContent.push({ heading, content });
     }
 
